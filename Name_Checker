@@ -1,0 +1,15 @@
+# HOW TO CHECK NAMES / CERTAIN STRINGS // BORED
+
+while True:
+    name = input("What is your name: ").capitalize()
+
+    if name == "John":
+        print(f"{name} your name is correct")
+        break
+    
+    elif name == " ":
+        print(f"{name} your name is correct")
+        break
+    
+    else:
+        print(f"{name} is incorrect")
