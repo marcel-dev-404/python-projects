@@ -1,0 +1,37 @@
+# ID checker
+
+import time
+
+ID = ["1231", "1234", "3246"]
+
+while True:
+    user = input("Enter your bus ID or type 'exit' to quit: ").lower()
+
+    if user in ID:
+        print("ID Valid.")
+        break 
+    
+    elif user == 'exit':
+        print("Goodbye!")
+        break
+    
+    else:
+        print("ID Invalid.")
+        create = input("Since you do not have a valid ID, would you like to create one? ").lower()
+        
+        if create == 'yes':
+            while True:
+                CID = input("Enter a four-digit ID code: ")
+                if len(CID) == 4 and CID.isdigit():
+                    if CID in ID:
+                        print("This ID already exists. Try a different one.")
+                    else:
+                        buses.append(CID)
+                        print("Storing ID...")
+                        time.sleep(0.8)
+                        break
+                else:
+                    print("Invalid input. ID must be 4 digits.")
+        else:
+            print("Goodbye!")
+            break
