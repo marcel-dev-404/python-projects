@@ -1,0 +1,40 @@
+# Rock, Paper, Scissor. // v.2
+
+import random
+import time
+
+picks = ["rock", "paper", "scissors"]
+
+rounds = 0  # Counter for rounds played
+
+while True:
+    user = input("Enter either Rock, Paper, Scissors or type 'exit' to quit: ").lower()
+
+    if user == "exit":
+        print("Thanks for playing!\n")
+        break
+
+    if user not in picks:
+        print("Invalid choice, please type rock, paper, or scissors.\n")
+        continue
+
+    rounds += 1  # Increment round count
+    bot = random.choice(picks)
+    time.sleep(0.5)
+
+    print(f"You picked {user}.")
+    print(f"The computer picked: {bot}.")
+
+    if user == bot:
+        time.sleep(0.4)
+        print("It's a draw!\n")
+    elif (
+        (user == "rock" and bot == "scissors")
+        or (user == "scissors" and bot == "paper")
+        or (user == "paper" and bot == "rock")
+    ):
+        time.sleep(0.8)
+        print(f"You win! It took you {rounds} round(s) to win.")
+        break
+    else:
+        print("Computer wins!\n")
