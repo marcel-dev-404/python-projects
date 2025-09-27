@@ -1,0 +1,49 @@
+# STUDENT SIGN UP PORTAL
+
+import time
+import string
+
+specialC = "!@#$%^&*()-_=+[]{}|;:',.<>/?"
+
+
+print ("Welcome to the school sign up portal.")
+
+time.sleep(0.5)
+User_F = str(input("Enter your first name: ")).lower()  # User  enters their first name as part of their username
+time.sleep(0.5)
+
+User_S = str(input("Enter your second name: ")).lower() # User  enters their second name as part of their username
+time.sleep(0.5)
+
+birthday = input("Enter the year you were born (XXXX): ") # User  enters their birthday as part of their username
+
+slicing1 = (User_F[0:3]) # cuts out the first 3 letters of their first name
+slicing2 = (User_S[0:2]) # cuts out the first 2 letters of their second name
+slicing3 = (birthday[2:4]) # cuts out the last 2 digits of their year
+
+conc = (slicing1 +"-"+ slicing2 + slicing3) # connects them all up template [XXX-XX00]
+
+time.sleep(0.5)
+print (f"Your username is: {conc}") # prints their custom user
+
+time.sleep(0.5)
+
+while True:
+    password = input("Enter your password: ")
+    
+    has_upper = any(char.isupper() for char in password)  # Checks if their password consists of an uppercase
+    has_number = any(char.isdigit() for char in password) # Checks if their password consists of a number
+    has_special = any(char in specialC for char in password) # Checks if their password consists of a special character
+    
+    if has_upper and has_number and has_special:
+        print("Password is valid!")  
+        break
+    else:
+        print("Password must include at least one uppercase letter, one number, and one special character. Try again.")
+
+
+time.sleep(0.5)    
+print("Finalizing settings")
+
+time.sleep(0.8)    
+print("Account set up.")
