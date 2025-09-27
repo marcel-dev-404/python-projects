@@ -1,0 +1,31 @@
+import time
+
+print("Welcome to Marcel's calculator")
+
+
+time.sleep(0.7)
+num1 = float(input("Choose your first number: "))
+num2 = float(input("Choose your second number: "))
+
+time.sleep(0.6)
+Option = int(input("Pick an option\n1. Add\n2. Multiplication\n3. Division\n4.Subtraction\n"))
+
+
+if Option == 1:
+    additionT = (num1 + num2)
+    print(f"Your answer is {additionT}")
+
+elif Option == 2:
+    MultT = (num1 * num2)
+    print(f"Your answer is {MultT}")
+
+elif Option == 3:
+    DivT = (num1 / num2)
+    print(f"Your answer is {DivT}")
+
+elif Option == 4:
+    SubT = (num1 - num2)
+    print(f"Your answer is {SubT}")
+
+else:
+    print("Something went wrong.")
