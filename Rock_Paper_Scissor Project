@@ -1,0 +1,35 @@
+# Rock, Paper, Scissor.
+
+import random
+import time
+
+picks = ["rock", "paper", "scissors"]
+
+
+# Sets the users pick
+user = input("Enter either: rock, paper, scissors: ").lower()
+
+# Sets the bots pick
+bot = random.choice(picks)
+time.sleep(0.5)
+print(f"You picked {user}.")
+print(f"The computer picked: {bot}.")
+
+if user == bot:
+    time.sleep(0.5)
+    print("it's a draw!")
+    
+# Deciding the winnder
+elif (
+    (user == 'rock' and bot == 'scissors') or 
+    (user == 'scissors' and bot == 'paper') or
+    (user == 'paper' and bot == 'rock')
+):
+    time.sleep(0.5)
+    print("You win!")
+    # filters through the array to see if user input exists. hence the "in"
+elif user in picks:
+    time.sleep(0.5) #if the input is in the array it will print the decision
+    print("Computer wins!")
+else: #if not in array itll print an "Invalid choice"
+    print("Invalid choice, please type rock, paper, or scissors.")
