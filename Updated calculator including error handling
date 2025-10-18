@@ -1,0 +1,56 @@
+def add(a, b):  # Declaring functions
+    return a + b
+def sub(a, b):
+    return a - b
+    
+def mul(a, b):
+    return a * b
+    
+def dev(a, b):
+    return a / b
+
+
+
+print("====== Welcome to Marcel's calculator. ======\n")   
+
+while True:    # Loop that handels errors of user input not being a digit
+
+    try:
+        num1 = float(input("Enter your first number: "))
+        num2 = float(input("Enter your second number: "))
+        break
+    except ValueError:
+        print("You must enter a digit!")
+
+
+
+operation = input("Enter your choice of operation + - * /.(Or type exit to leave): ").lower()
+
+if operation == 'exit':
+    print("Goodbye!")
+    exit(0)
+
+
+if operation == '+':
+    equal = add(num1, num2)
+    print (f"The addition of {num1} & {num2} equals to {equal}!")
+
+elif operation == '-':
+    equal = sub(num1, num2)
+    print (f"The subtraction of {num1} & {num2} equals to {equal}!")
+
+elif operation == '/':
+    try:
+        equal = dev(num1, num2)
+        print (f"The division of {num1} & {num2} equals to {equal}!")
+    except ZeroDivisionError: # Error handles if the user is trying to divide by 0
+        print("Cannot divide by 0!")
+    
+elif operation == '*':
+    equal = mul(num1, num2)
+    print (f"The multipilicaton of {num1} & {num2} equals to {equal}!")
+
+else:
+    print("Unknown operation.")
+
+
