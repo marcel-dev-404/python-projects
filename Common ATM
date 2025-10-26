@@ -1,0 +1,27 @@
+money = 0
+
+while True:
+    option = input("What would you like to do?\n1. Deposit\n2. Withdraw\n3. Balance\n4. Exit\n").lower()
+    
+    if option == 'deposit':
+        dep = int(input("How much would you like to deposit?($) "))
+        money += dep
+        print ("\nSuccesfull!\n")
+        
+    elif option == 'withdraw':
+        withd = int(input("\nHow much would you like to withdraw?($) "))
+        if withd > money:
+            print("Insufficient funds!")
+        else:
+            money -= withd
+            print("\nWithdrawal successful!\n")
+        
+    elif option == 'balance':
+        print(f"\n${money}\n")
+        
+    elif option == 'exit':
+        print("\nGoodbye!")
+        break
+    
+    else:
+        print("\nUnknown action. Please try again.\n")
