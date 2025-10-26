@@ -1,0 +1,57 @@
+# Expense Tracker
+
+
+food = []
+personal = []
+shopping = []
+
+while True:
+    hmany = int(input("How many categories did you buy in: "))
+    
+    if hmany > 3:
+        print("This many categories doesn't exist. Try again.\n")
+    
+    elif hmany <= 3:
+        break
+
+
+for i in range (hmany):
+    category = input(f"What category is your {i + 1} item? ").lower()
+    
+    if category == "food":
+        print("Item added to category.")
+        amount = int(input("\nHow many items did you get? "))
+        
+        for j in range (amount):
+            cost1 = float(input(f"\nHow much did your {j + 1} item cost? "))
+            food.append(cost1)
+    
+    elif category == "personal":
+        print("Item added to category.")
+        amount2 = int(input("\nHow many items did you get? "))
+        
+        for h in range (amount2):
+            cost2 = float(input(f"\nHow much did your {h + 1} item cost? "))
+            personal.append(cost2)
+    
+    elif category == "shopping":
+        print("Item added to category.")
+        amount3 = int(input("\nHow many items did you get? "))
+        
+        for g in range (amount3):
+            cost3 = float(input(f"\nHow much did your {g + 1} item cost? "))
+            shopping.append(cost3)
+    
+    else:
+        print("Unknown input. Exiting the session.")
+        break
+
+
+Total1 = sum(food)
+Total2 = sum(personal)
+Total3 = sum(shopping)
+
+
+print(f"Your total spending in the food category is: {Total1}.")
+print(f"Your total spending in the personal category is: {Total2}.")
+print(f"Your total spending in the shopping category is: {Total3}.")
