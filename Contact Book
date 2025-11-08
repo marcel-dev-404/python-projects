@@ -1,3 +1,5 @@
+# Contact book able to change, remove, add, view
+
 # Initial dictionary of contacts with names as keys and phone numbers as values
 contacts = {
     "Marcel":"+44 3427098",
@@ -10,7 +12,7 @@ while True:
 
     # Try to get the user's menu choice and handle invalid input
     try:
-        main = int(input("What do you want to do?\n1. Show contacts\n2. Change phone number or Contact name\n3. Add new contact\n4. Exit\n"))
+        main = int(input("What do you want to do?\n1. Show contacts\n2. Change phone number or Contact name\n3. Add new contact\n4. Remove a contact\n5. Exit\n"))
     except ValueError:
         print("Enter the number of your option.")  # Error if input is not an integer
         continue  # Restart loop if input is invalid
@@ -71,12 +73,12 @@ while True:
         contacts[new_key] = new_value  # Add new contact to dictionary
     
     # Option 4: Exit the program
-    elif main == 4:
+    elif main == 5:
         print("\nGoodbye!")
         break  # Exit main loop
     
     # Option 5: Remove a contact
-    elif main == 5:
+    elif main == 4:
         remove_name = input("Enter the name of the contact you want to remove: ")  # Ask which contact to delete
         if remove_name in contacts:  # Check if contact exists
             del contacts[remove_name]  # Delete the contact
